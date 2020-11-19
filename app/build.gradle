@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.example.emotiondetector"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    //kamera kit
+    implementation 'com.camerakit:camerakit:1.0.0-beta3.11'
+    implementation 'com.camerakit:jpegkit:0.1.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.0'
+
+    implementation("com.google.guava:guava:30.0-android")
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //add ML kit
+    // Use this dependency to use dynamically downloaded model in Google Play Service
+    implementation 'com.google.android.gms:play-services-mlkit-face-detection:16.1.1'
+}
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FaceEnrollment">
+
+
+    <Button
+        android:id="@+id/toggleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toggle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.camerakit.CameraKitView
+        app:camera_flash="off"
+        android:id="@+id/camera"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:keepScreenOn="true"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_above="@+id/startButton"
+        tools:ignore="MissingConstraints"
+        app:camera_facing="back"
+        app:camera_focus="continuous"
+        app:camera_permissions="camera" >
+
+        <com.example.emotiondetector.Helper.GraphicOverlay
+            android:id="@+id/graphic_overlay"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:ignore="MissingConstraints" />
+
+    </com.camerakit.CameraKitView>
+
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start face detecting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
