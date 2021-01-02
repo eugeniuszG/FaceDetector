@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="tfe_color_primary" tools:ignore="MissingDefaultResource">#ffa800</color>
+    <color name="tfe_color_primary_dark" tools:ignore="MissingDefaultResource">#66000000</color>
+    <color name="tfe_color_accent" tools:ignore="MissingDefaultResource">#425066</color>
+
+    <color name="tfe_semi_transparent" tools:ignore="MissingDefaultResource">#66000000</color>
+</resources>

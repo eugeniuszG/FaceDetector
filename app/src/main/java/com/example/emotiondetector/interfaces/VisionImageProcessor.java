@@ -17,8 +17,8 @@ package com.example.emotiondetector.interfaces;
  */
 
 import android.graphics.Bitmap;
-import com.example.emotiondetector.Helper.FrameMetadata;
-import com.example.emotiondetector.Helper.GraphicOverlay;
+import com.example.emotiondetector.Utils.FrameMetadata;
+import com.example.emotiondetector.Utils.GraphicOverlay;
 import com.google.mlkit.common.MlKitException;
 
 import java.nio.ByteBuffer;

@@ -3,34 +3,28 @@ package com.example.emotiondetector;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnFaceEnrollment;
     Button btnCatchSmileFace;
     Button btnFaceRecognition;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnFaceEnrollment = findViewById(R.id.buttonFaceEnrolment);
         btnCatchSmileFace = findViewById(R.id.buttonCatchSmile);
         btnFaceRecognition = findViewById(R.id.buttonFaceRecognition);
-
-        btnFaceEnrollment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFaceEnrollmentActivity();
-            }
-        });
 
         btnCatchSmileFace.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openFaceRecognitionActivity() {
-        Intent intent = new Intent(this, FaceRecognition.class);
+        Intent intent = new Intent(this, DetectorActivity.class);
         startActivity(intent);
     }
 
@@ -67,10 +61,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openFaceEnrollmentActivity() {
-        Intent intent = new Intent(this, FaceEnrollment.class);
-        startActivity(intent);
-    }
 
 
 }

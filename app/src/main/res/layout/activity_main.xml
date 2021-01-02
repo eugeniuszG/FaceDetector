@@ -1,58 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-<Button
-    android:id="@+id/buttonFaceRecognition"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="80dp"
-    android:text="Face recognition"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintVertical_bias="0.587" />
+    <Button
+        android:id="@+id/buttonFaceRecognition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="212dp"
+        android:text="Face recognition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonCatchSmile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        android:text="Catch smile face"
+        android:layout_marginBottom="308dp"
+        android:text="Smile detection"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFaceEnrolment"
-        app:layout_constraintVertical_bias="0.73" />
-
-    <Button
-        android:id="@+id/buttonFaceEnrolment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onFaceEnrollmentClick"
-        android:text="Face enrollment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
-
-    <TextView
-    android:id="@+id/txtFaceEnrollment"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Wykrywanie twarzy i dodanie jej do bazy"
-    app:layout_constraintBottom_toTopOf="@+id/buttonFaceEnrolment"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtFaceSmiling"
@@ -63,7 +37,7 @@ tools:context=".MainActivity">
         app:layout_constraintBottom_toTopOf="@+id/buttonCatchSmile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFaceEnrolment"
+        app:layout_constraintTop_toBottomOf="@+id/greetings"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -81,17 +55,17 @@ tools:context=".MainActivity">
         tools:ignore="MissingConstraints" />
 
     <TextView
-    android:id="@+id/greetings"
-    android:layout_width="409dp"
-    android:layout_height="37dp"
-    android:text="FaceDetector app"
-    android:textAlignment="center"
-    app:layout_constraintBottom_toTopOf="@+id/txtFaceEnrollment"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.269"
-    android:textAppearance="?android:textAppearanceLarge"/>
+        android:id="@+id/greetings"
+        android:layout_width="409dp"
+        android:layout_height="37dp"
+        android:text="Face and Smile Detector"
+        android:textAlignment="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
