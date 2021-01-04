@@ -345,7 +345,7 @@ public class DetectorActivity extends com.example.emotiondetector.CameraActivity
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     LayoutInflater inflater = getLayoutInflater();
-    View dialogLayout = inflater.inflate(R.layout.image_add_dialog, null);
+    View dialogLayout = inflater.inflate(R.layout.add_image_dialog, null);
     ImageView ivFace = dialogLayout.findViewById(R.id.dlg_image);
     TextView tvTitle = dialogLayout.findViewById(R.id.dlg_title);
     EditText etName = dialogLayout.findViewById(R.id.dlg_input);

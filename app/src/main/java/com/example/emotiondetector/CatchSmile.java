@@ -72,6 +72,7 @@ public class CatchSmile extends AppCompatActivity {
         mPreviewView = findViewById(R.id.view_finder);
         mToggleBtn = findViewById(R.id.toggle_button);
 
+
         if(allPermissionsGranted()){
             startCamera();
              //start camera if permission has been granted by user
@@ -89,13 +90,10 @@ public class CatchSmile extends AppCompatActivity {
                 bindPreview(cameraProvider);
 
             } catch (ExecutionException | InterruptedException e) {
-                // No errors need to be handled for this Future.
-                // This should never be reached.
+
             }
         }, ContextCompat.getMainExecutor(this));
     }
-
-    //end of onCreate method
 
     private void bindPreview(ProcessCameraProvider cameraProvider) {
         cameraProvider.unbindAll();
@@ -118,9 +116,7 @@ public class CatchSmile extends AppCompatActivity {
                     FaceDetectorOptions options =
                             new FaceDetectorOptions.Builder()
                                     .setClassificationMode(FaceDetectorOptions.PERFORMANCE_MODE_ACCURATE)
-                                    //.setLandmarkMode(FaceDetectorOptions.LANDMARK_MODE_NONE)
                                     .setClassificationMode(FaceDetectorOptions.CLASSIFICATION_MODE_ALL)
-                                    //.setContourMode(FaceDetectorOptions.CONTOUR_MODE_ALL)
                                     .enableTracking()
                                     .build();
 
@@ -132,8 +128,6 @@ public class CatchSmile extends AppCompatActivity {
                         @Override
                         public void onSuccess(List<Face> faces) {
                             //logging the height and width of preview screen
-                            Log.i("info", "Screen height" + mPreviewView.getHeight());
-                            Log.i("info", "Screen width" + mPreviewView.getWidth());
                             graphicOverlay.clear();
                             getFaceResults(faces);
                             faceDetector.close();
@@ -161,6 +155,7 @@ public class CatchSmile extends AppCompatActivity {
 
         Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner)this, cameraSelector,imageAnalysis, preview);
     }
+
 
 
 
@@ -235,7 +230,6 @@ public class CatchSmile extends AppCompatActivity {
             Log.v(MANUAL_TESTING_LOG, "face tracking id: " + face.getTrackingId());
         }
     }
-
 
     private boolean allPermissionsGranted(){
         //check if req permissions have been granted

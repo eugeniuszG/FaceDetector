@@ -56,9 +56,9 @@
 
     <TextView
         android:id="@+id/greetings"
-        android:layout_width="409dp"
-        android:layout_height="37dp"
-        android:text="Face and Smile Detector"
+        android:layout_width="432dp"
+        android:layout_height="35dp"
+        android:text="Main menu"
         android:textAlignment="center"
         android:textAppearance="?android:textAppearanceLarge"
         app:layout_constraintBottom_toBottomOf="parent"

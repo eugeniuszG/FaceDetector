@@ -10,55 +10,6 @@
     android:screenOrientation="fullSensor"
     tools:context=".MainActivity">
 
-
-<!--    <FrameLayout-->
-<!--        android:id="@+id/container"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <androidx.camera.view.PreviewView-->
-<!--            android:id="@+id/view_finder"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"></androidx.camera.view.PreviewView>-->
-<!--    </FrameLayout>-->
-
-<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
-<!--&lt;!&ndash;        android:id="@+id/capture_button"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_width="72dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_height="72dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_margin="24dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:srcCompat="@android:drawable/ic_menu_camera"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintStart_toStartOf="parent" />&ndash;&gt;-->
-
-<!--    <Button-->
-<!--        android:id="@+id/smile_detect_button"-->
-<!--        android:layout_width="228dp"-->
-<!--        android:layout_height="49dp"-->
-<!--        android:text="Start smile detecting"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.497"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
-<!--&lt;!&ndash;        android:id="@+id/toggle_button"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_width="72dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_height="72dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_margin="24dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:srcCompat="@android:drawable/ic_menu_revert"&ndash;&gt;-->
-<!--&lt;!&ndash;        tools:ignore="MissingConstraints" />&ndash;&gt;-->
-
-
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#00000000">
-
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
@@ -85,11 +36,11 @@
         <androidx.camera.view.PreviewView
             android:id="@+id/view_finder"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="526dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"></androidx.camera.view.PreviewView>
+            android:layout_marginBottom="205dp"></androidx.camera.view.PreviewView>
 
     </RelativeLayout>
 
@@ -121,7 +72,7 @@
     <com.example.emotiondetector.Utils.GraphicOverlay
         android:id="@+id/graphic_overlay"
         android:layout_width="match_parent"
-        android:layout_height="662dp"
+        android:layout_height="wrap_content"
         app:layout_anchor="@+id/relativeLayout"
         app:layout_anchorGravity="center"
         tools:ignore="MissingConstraints"
