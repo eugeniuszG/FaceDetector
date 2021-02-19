@@ -86,9 +86,6 @@ public class DetectorActivity extends com.example.emotiondetector.CameraActivity
   private static final boolean MAINTAIN_ASPECT = false;
 
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
-  //private static final int CROP_SIZE = 320;
-  //private static final Size CROP_SIZE = new Size(320, 320);
-
 
   private static final boolean SAVE_PREVIEW_BITMAP = false;
   private static final float TEXT_SIZE_DIP = 10;
@@ -249,7 +246,6 @@ public class DetectorActivity extends com.example.emotiondetector.CameraActivity
     final long currTimestamp = timestamp;
     trackingOverlay.postInvalidate();
 
-    // No mutex needed as this method is not reentrant.
     if (computingDetection) {
       readyForNextImage();
       return;

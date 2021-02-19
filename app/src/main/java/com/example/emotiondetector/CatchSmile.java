@@ -7,6 +7,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Size;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -16,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
-import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
@@ -60,9 +60,8 @@ public class CatchSmile extends AppCompatActivity {
 
     PreviewView mPreviewView;
     ImageButton mToggleBtn;
-    private ImageCapture imageCapture;
 
-    private int lensFacing = CameraSelector.LENS_FACING_BACK;
+    private int lensFacing = CameraSelector.LENS_FACING_FRONT;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +69,19 @@ public class CatchSmile extends AppCompatActivity {
         setContentView(R.layout.activity_catch_smile);
         graphicOverlay =findViewById(R.id.graphic_overlay);
         mPreviewView = findViewById(R.id.view_finder);
-        mToggleBtn = findViewById(R.id.toggle_button);
+        mToggleBtn = findViewById(R.id.fab_switchcam);
+
+
+
+        mToggleBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    toggleFrontBackCamera();
+                }
+        });
+
+
+
 
 
         if(allPermissionsGranted()){
@@ -80,6 +91,14 @@ public class CatchSmile extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
         }
     }
+
+    private void toggleFrontBackCamera() {
+        lensFacing = (CameraSelector.LENS_FACING_FRONT == lensFacing) ?
+            CameraSelector.LENS_FACING_BACK : CameraSelector.LENS_FACING_FRONT;
+        startCamera();
+    }
+
+
 
     private void startCamera() {
 
